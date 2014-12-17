@@ -5,3 +5,4 @@ class CreatePosts < ActiveRecord::Migration
   		p.timestamps
   end
 end
+end
