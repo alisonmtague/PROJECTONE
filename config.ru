@@ -1,2 +1,2 @@
-require './project1'
+require './app'
 run Sinatra::Application
