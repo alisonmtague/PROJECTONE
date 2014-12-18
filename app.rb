@@ -11,7 +11,7 @@ require_relative './models/user'
 require_relative './models/post'
 require_relative './models/comment'
 
-binding.pry 
+#binding.pry 
 
 enable :sessions
 
@@ -26,8 +26,16 @@ register Sinatra::SimpleAuthentication
 
 get '/' do
   login_required
-	erb :index
+  #redirect '/artist_list'
+	#erb :index
+	redirect '/artist_list'
 end
+
+get '/artist_list' do
+	@posts = Post.all
+	erb :artist_list
+end
+
 
 get '/login' do
 	erb :login
@@ -42,4 +50,12 @@ end
 #   redirect '/'
 # end
 
+get '/post_artist' do
+	erb :post_artist_form
+end
 
+post '/post_artist_form' do
+	@post = params[:artist_name]
+	Post.create(artist_name: @post)
+	redirect '/'
+end
