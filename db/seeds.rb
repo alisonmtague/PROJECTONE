@@ -16,11 +16,11 @@ require_relative "../models/user"
 # ])
 
 
-Comment.create([
+# Comment.create([
 
-  { :title => "U street", :post_id => 4},
+#   { :title => "U street", :post_id => 4},
 
-	])
+# 	])
 
 # Task.create([
  
