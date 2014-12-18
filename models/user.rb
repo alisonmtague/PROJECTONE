@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   # model is the one we want to authenticate in the database
   Sinatra::SimpleAuthentication.require_adapter
   include Sinatra::SimpleAuthentication::Models::ActiveRecord::Adapter
-  	# has_many :posts
-  	# has_many :comments, :through => :posts
+  	has_many :artists
+  	has_many :venues, :through => :artists
+
 
 end

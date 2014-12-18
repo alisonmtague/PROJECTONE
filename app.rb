@@ -8,8 +8,8 @@ require 'pry'
 require_relative './config/environments'
 
 require_relative './models/user'
-require_relative './models/post'
-require_relative './models/comment'
+require_relative './models/artist'
+require_relative './models/venue'
 
 #binding.pry 
 
@@ -32,7 +32,7 @@ get '/' do
 end 
 
 get '/artist_list' do
-	@posts = Post.all
+	@artists = Artist.all
 	erb :artist_list
 end
 
@@ -50,21 +50,21 @@ end
 #   redirect '/'
 # end
 
-get '/post_artist' do
-	erb :post_artist_form
+get '/artist_form' do
+	erb :artist_form
 end
 
-post '/post_artist_form' do
-	@post = params[:artist_name]
-	Post.create(post: @post)
+post '/artist_form' do
+	@artist = params[:artist_name]
+	Artist.create(name: @artist)
 	redirect '/'
 end
 
 #changed this and artist_and_venues.erb and post_venue_form
 
-get '/:post_id/comments' do
-  @post_id = params[:post_id]
-  @post = Post.find(@post_id)
+get '/:artist_id/venues' do
+  @artist_id = params[:artist_id]
+  @artist = Artist.find(@artist_id)
 	erb :artist_and_venues
 end
 
@@ -72,14 +72,15 @@ end
 # 	erb :post_venue_form
 # end
 
-post '/comment_venue_form' do  ##changed from post_venue_form
-	@post = params[:artist_name]
-	Post.create(artist_name: @post)
+post '/venue_form' do  ##changed from post_venue_form
+	@venue = params[:venue_name]
+	Venue.create(name: @venue, artist_id: params[:artist_id])
 	redirect '/'
 end
 
-# get '/:post_id/add_venue' do
-# 	@post_id = params[:post_id]
-# 	Comment.create(:venue_name @post_id) #someway to get the post id, title: params[:venue_name])
+# get '/:artist_id/add_venue' do
+# 	@artist_id = params[:artist_id]
+# 	erb :artist_and_venues
 # end
-# end
+
+

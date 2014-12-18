@@ -16,15 +16,8 @@ ActiveRecord::Schema.define(version: 20141216202550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: true do |t|
-    t.string   "title",      null: false
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.string   "post",       null: false
+  create_table "artists", force: true do |t|
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,5 +29,12 @@ ActiveRecord::Schema.define(version: 20141216202550) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
+  create_table "venues", force: true do |t|
+    t.string   "name",       null: false
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

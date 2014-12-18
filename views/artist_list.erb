@@ -1,15 +1,15 @@
 <h1>Posted Artists</h1>
 
 
-<% @posts.each do |post| %>
+<% @artists.each do |artist| %>
 	<ul>
 
-	<li><a href="/<%= post.id %>/comments"><%= post.post %> </a></li>
+	<li><a href="/<%= artist.id %>/venues"><%= artist.name %> </a></li>
 
 	</ul>
 <%end%>
 
-<p><%= erb :post_artist_form %></p>
+<p><%= erb :artist_form %></p>
 
 
 

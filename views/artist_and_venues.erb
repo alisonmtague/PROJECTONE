@@ -1,13 +1,13 @@
-<h2><%= @post.post %></h2>
+<h2><%= @artist.name %></h2>
 
-<% @post.comments.each do |comment| %>
+<% @artist.venues.each do |venue| %>
 	<ul>
 
-		<li><%= comment.title %></li>
+		<li><%= venue.name %></li>
 
 	</ul>
 
 <%end%>
-<p><%= erb :comment_venue_form %></p>
+<p><%= erb :venue_form %></p>
 
 <!-- ##need option to add new venue to existing artist -->
