@@ -29,7 +29,7 @@ get '/' do
   #redirect '/artist_list'
 	#erb :index
 	redirect '/artist_list'
-end
+end 
 
 get '/artist_list' do
 	@posts = Post.all
