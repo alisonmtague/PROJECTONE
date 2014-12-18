@@ -72,8 +72,14 @@ end
 # 	erb :post_venue_form
 # end
 
-post '/post_venue_form' do
+post '/comment_venue_form' do  ##changed from post_venue_form
 	@post = params[:artist_name]
 	Post.create(artist_name: @post)
 	redirect '/'
 end
+
+# get '/:post_id/add_venue' do
+# 	@post_id = params[:post_id]
+# 	Comment.create(:venue_name @post_id) #someway to get the post id, title: params[:venue_name])
+# end
+# end
