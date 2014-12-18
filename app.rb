@@ -56,7 +56,7 @@ end
 
 post '/post_artist_form' do
 	@post = params[:artist_name]
-	Post.create(artist_name: @post)
+	Post.create(post: @post)
 	redirect '/'
 end
 
@@ -65,7 +65,6 @@ end
 get '/:post_id/comments' do
   @post_id = params[:post_id]
   @post = Post.find(@post_id)
-	@comments = Comment.where(post_id: params[:post_id])
 	erb :artist_and_venues
 end
 

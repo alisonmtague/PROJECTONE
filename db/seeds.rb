@@ -8,12 +8,12 @@ require_relative "../models/post"
 require_relative "../models/user"
 
 
-Post.create([
+# Post.create([
  
-  { :post => "Classixx"},
-  { :post => "Matthew Dear"},
-  { :post => "Ben Pearce"},
-])
+#   { :post => "Classixx"},
+#   { :post => "Matthew Dear"},
+#   { :post => "Ben Pearce"},
+# ])
 
 
 Comment.create([
