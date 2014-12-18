@@ -1,1 +1,13 @@
-##need option to add new venue to existing artist
+<h2><%= @post.post %></h2>
+
+<% @post.comments.each do |comment| %>
+	<ul>
+
+		<li><%= comment.title %></li>
+
+	</ul>
+
+<%end%>
+<a href="/comment_venue"><%= erb :comment_venue_form %></a>
+
+<!-- ##need option to add new venue to existing artist -->

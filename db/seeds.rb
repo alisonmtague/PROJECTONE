@@ -15,6 +15,13 @@ Post.create([
   { :post => "Ben Pearce"},
 ])
 
+
+Comment.create([
+
+  { :title => "U street", :post_id => 4},
+
+	])
+
 # Task.create([
  
 #   { :title => "2 dozen large eggs", :description => "", :list_id => 1, :user_id => 1},

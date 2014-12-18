@@ -59,3 +59,22 @@ post '/post_artist_form' do
 	Post.create(artist_name: @post)
 	redirect '/'
 end
+
+#changed this and artist_and_venues.erb and post_venue_form
+
+get '/:post_id/comments' do
+  @post_id = params[:post_id]
+  @post = Post.find(@post_id)
+	@comments = Comment.where(post_id: params[:post_id])
+	erb :artist_and_venues
+end
+
+# get '/comment_venue' do
+# 	erb :post_venue_form
+# end
+
+post '/post_venue_form' do
+	@post = params[:artist_name]
+	Post.create(artist_name: @post)
+	redirect '/'
+end
