@@ -1,0 +1,14 @@
+<h1>Venues for:</h1>
+<h2><%= @artist.name %></h2>
+
+<% @artist.venues.each do |venue| %>
+	<ul>
+
+		<li><%= venue.name %></li>
+
+	</ul>
+
+<%end%>
+<p><%= erb :venue_form %></p>
+
+<!-- ##need option to add new venue to existing artist -->

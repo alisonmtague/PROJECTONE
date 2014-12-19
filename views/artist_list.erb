@@ -1,0 +1,20 @@
+<h1>Posted Artists</h1>
+
+
+<% @artists.each do |artist| %>
+	<ul>
+
+	<li><a href="/<%= artist.id %>/venues"><%= artist.name %> </a></li>
+
+	</ul>
+<%end%>
+
+<p><%= erb :artist_form %></p>
+
+
+
+
+ 	<!-- ##need each post to be clickable to redirect to artist page that has comments of venues '/artist_and_venues' -->
+
+
+ <!-- ## need a link to direct user to post new artist -->
